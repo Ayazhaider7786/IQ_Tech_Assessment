@@ -1,4 +1,4 @@
-# Aspire-Forgekit-DotNet-React
+# IQ Technologies
 
 Full-stack starter: ASP.NET Core Web API + React (Vite), orchestrated locally
 with .NET Aspire. JWT auth, role-based authorization, task management, and a
