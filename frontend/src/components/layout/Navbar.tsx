@@ -19,12 +19,16 @@ export function Navbar() {
           <NavLink to="/" className={linkClass} end>
             Home
           </NavLink>
-          <NavLink to="/about" className={linkClass}>
-            About Us
-          </NavLink>
-          <NavLink to="/contact" className={linkClass}>
-            Contact Us
-          </NavLink>
+          {isAuthenticated && (
+            <>
+              <NavLink to="/tasks" className={linkClass}>
+                Tasks
+              </NavLink>
+              <NavLink to="/task-history" className={linkClass}>
+                Task History
+              </NavLink>
+            </>
+          )}
         </nav>
 
         <div className="flex items-center gap-3">
