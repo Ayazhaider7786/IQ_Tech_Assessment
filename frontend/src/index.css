@@ -1,0 +1,135 @@
+@import "tailwindcss";
+
+:root {
+  --surface: #ffffff;
+  --surface-raised: #ffffff;
+  --surface-sunken: #f3f4f6;
+  --ink: #0f172a;
+  --ink-soft: #475569;
+  --muted: #94a3b8;
+  --brand: #4f46e5;
+  --brand-strong: #4338ca;
+  --brand-soft: #e0e7ff;
+  --on-brand: #ffffff;
+  --line: #e2e8f0;
+  --danger-soft: #fee2e2;
+  --danger: #dc2626;
+  --success-soft: #dcfce7;
+  --success: #16a34a;
+  --warning-soft: #fef3c7;
+  --warning: #d97706;
+
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --surface: #0f172a;
+    --surface-raised: #1e293b;
+    --surface-sunken: #020617;
+    --ink: #f1f5f9;
+    --ink-soft: #cbd5e1;
+    --muted: #64748b;
+    --brand: #818cf8;
+    --brand-strong: #6366f1;
+    --brand-soft: #312e81;
+    --on-brand: #0f172a;
+    --line: #334155;
+    --danger-soft: #450a0a;
+    --danger: #f87171;
+    --success-soft: #052e16;
+    --success: #4ade80;
+    --warning-soft: #451a03;
+    --warning: #fbbf24;
+  }
+}
+
+:root[data-theme="dark"] {
+  --surface: #0f172a;
+  --surface-raised: #1e293b;
+  --surface-sunken: #020617;
+  --ink: #f1f5f9;
+  --ink-soft: #cbd5e1;
+  --muted: #64748b;
+  --brand: #818cf8;
+  --brand-strong: #6366f1;
+  --brand-soft: #312e81;
+  --on-brand: #0f172a;
+  --line: #334155;
+  --danger-soft: #450a0a;
+  --danger: #f87171;
+  --success-soft: #052e16;
+  --success: #4ade80;
+  --warning-soft: #451a03;
+  --warning: #fbbf24;
+}
+
+@theme inline {
+  --color-surface: var(--surface);
+  --color-surface-raised: var(--surface-raised);
+  --color-surface-sunken: var(--surface-sunken);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-muted: var(--muted);
+  --color-brand: var(--brand);
+  --color-brand-strong: var(--brand-strong);
+  --color-brand-soft: var(--brand-soft);
+  --color-on-brand: var(--on-brand);
+  --color-line: var(--line);
+  --color-danger-soft: var(--danger-soft);
+  --color-danger: var(--danger);
+  --color-success-soft: var(--success-soft);
+  --color-success: var(--success);
+  --color-warning-soft: var(--warning-soft);
+  --color-warning: var(--warning);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: var(--surface);
+  color: var(--ink);
+}
+
+h1 {
+  margin: 0;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

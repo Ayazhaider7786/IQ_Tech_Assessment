@@ -1,0 +1,11 @@
+<Solution>
+  <Project Path="frontend/frontend.esproj">
+    <Build />
+    <Deploy />
+  </Project>
+  <Project Path="MyApp.AppHost/MyApp.AppHost.csproj" />
+  <Project Path="MyApp.Server/MyApp.Server.csproj" />
+  <Project Path="MyApp.Data/MyApp.Data.csproj" />
+  <Project Path="MyApp.Services/MyApp.Services.csproj" />
+  <Project Path="MyApp.SeedData/MyApp.SeedData.csproj" />
+</Solution>
