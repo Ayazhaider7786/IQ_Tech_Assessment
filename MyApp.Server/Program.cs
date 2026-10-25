@@ -16,6 +16,7 @@ using MyApp.Services.Model.Auth;
 using MyApp.Services.Model.SeedData;
 using MyApp.Services.Services.Auth;
 using MyApp.Services.Services.SeedData;
+using MyApp.Services.Services.Tasks;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -132,6 +133,7 @@ builder.Services.AddScoped<ICurrentUserProvider, CurrentUserProvider>();
 builder.Services.AddScoped<IJwtTokenService, JwtTokenService>();
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<ISeedDataService, SeedDataService>();
+builder.Services.AddScoped<ITaskService, TaskService>();
 
 builder.Services.Configure<SeedDataOptions>(builder.Configuration.GetSection("SeedData"));
 

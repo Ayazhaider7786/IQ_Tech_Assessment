@@ -13,6 +13,8 @@ public class ApplicationDbContext(
 {
     public DbSet<RefreshToken> RefreshTokens => Set<RefreshToken>();
 
+    public DbSet<TaskItem> Tasks => Set<TaskItem>();
+
     protected override void OnModelCreating(ModelBuilder builder)
     {
         base.OnModelCreating(builder);
@@ -26,6 +28,16 @@ public class ApplicationDbContext(
 
             entity.HasIndex(token => token.TokenHash).IsUnique();
             entity.HasIndex(token => token.UserId);
+        });
+
+        builder.Entity<TaskItem>(entity =>
+        {
+            entity.HasOne(task => task.User)
+                .WithMany()
+                .HasForeignKey(task => task.UserId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            entity.HasIndex(task => new { task.UserId, task.IsActive });
         });
     }
 
