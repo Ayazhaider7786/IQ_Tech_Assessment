@@ -35,6 +35,24 @@ state via the `useTasks` hook. `AuthContext`/`useAuth` for session state,
 semantic tokens (`src/index.css`), UI primitives (`Button`, `TextField`,
 `TextAreaField`, `Alert`).
 
+## API Integration
+
+**API used:** [official-joke-api](https://official-joke-api.appspot.com/) —
+`GET https://official-joke-api.appspot.com/random_joke`. No API key required,
+and it returns `Access-Control-Allow-Origin: *`, so it's called directly from
+the browser with no backend proxy.
+
+**Short explanation of implementation:** the URL lives in
+`frontend/src/config/jokeApi.ts`; `frontend/src/services/jokeService.ts` calls
+it with a plain `axios.get()` (not the app's `apiClient`, since that instance
+is wired to our own API's base URL and attaches a JWT header — both wrong for
+an unrelated public API). `components/pages/ApiIntegrationPage.tsx` renders
+the `/api-integration` route: a "Give me a joke" button (or pressing Enter)
+fetches and shows the joke's `setup` text, a "Show Punchline" button then
+reveals the `punchline`, and a "Next Joke" button appears alongside it to
+fetch another. Errors go through the same `extractApiError` + `Alert` pattern
+used everywhere else in the app.
+
 ## Setup
 
 ```
