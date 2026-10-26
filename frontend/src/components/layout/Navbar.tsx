@@ -19,6 +19,9 @@ export function Navbar() {
           <NavLink to="/" className={linkClass} end>
             Home
           </NavLink>
+          <NavLink to="/api-integration" className={linkClass}>
+            Api Integration
+          </NavLink>
           {isAuthenticated && (
             <>
               <NavLink to="/tasks" className={linkClass}>
